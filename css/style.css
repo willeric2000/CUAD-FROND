@@ -4,10 +4,11 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
+html,
+body {
   width: 100%;
   height: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -17,11 +18,8 @@ body {
     sans-serif;
   color: #f8fafc;
   min-height: 100vh;
-  width: 100%;
-
   overflow-x: hidden;
   overflow-y: auto !important;
-
   background:
     linear-gradient(rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.9)),
     url("/imagenes/01.jpg") !important;
@@ -35,7 +33,6 @@ body {
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-brand {
@@ -55,7 +52,6 @@ body {
 .dropdown-menu {
   background: #0f172a;
   border: none;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
 .dropdown-item {
@@ -76,22 +72,24 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding-top: 150px;
-  padding-bottom: 50px;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+  padding: 150px 0 50px 0;
 }
 
-.hero h1 {
+.hero h1,
+.hero-sub h2 {
   font-weight: 820;
   color: #ffffff;
-  animation: pulsoNeon 4s ease-in-out infinite alternate;
+}
+
+.hero p,
+.hero-sub p {
+  color: #dbeafe;
+  max-width: 700px;
+  margin: auto;
 }
 
 .hero p {
-  color: #dbeafe;
   font-size: 1.2rem;
-  max-width: 700px;
-  margin: auto;
 }
 
 .hero-sub {
@@ -103,26 +101,17 @@ body {
 
 .hero-sub h2 {
   font-weight: 700;
-  color: #ffffff;
-  animation: pulsoNeon 4s ease-in-out infinite alternate;
-}
-
-.hero-sub p {
-  color: #dbeafe;
-  max-width: 700px;
-  margin: auto;
 }
 
 .hero-sub .btn-outline-info {
   border-color: #38bdf8;
   color: #38bdf8;
-  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: all 0.3s ease;
 }
 
 .hero-sub .btn-outline-info:hover {
   background: #38bdf8;
   color: #0f172a;
-  box-shadow: 0 0 25px rgba(56, 189, 248, 0.6);
   transform: translateY(-3px);
 }
 
@@ -131,7 +120,6 @@ body {
   padding-left: 15px;
   font-weight: 700;
   color: #ffffff;
-  text-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
 }
 
 .topics {
@@ -142,6 +130,18 @@ body {
   margin: 0 auto;
 }
 
+.topic-card,
+.glass-card,
+.exercise-card {
+  background: rgba(15, 23, 42, 0.5) !important;
+  border: 1px solid rgba(56, 189, 248, 0.2) !important;
+  backdrop-filter: blur(12px) !important;
+  border-radius: 20px !important;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
 .topic-card {
   display: flex;
   align-items: center;
@@ -149,11 +149,40 @@ body {
   padding: 20px 25px;
   text-decoration: none;
   color: white;
-  border-radius: 20px;
-  background: rgba(15, 23, 42, 0.4);
-  border: 1px solid rgba(56, 189, 248, 0.15);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.glass-card {
+  margin: 25px auto;
+  max-width: 900px;
+  padding: 35px;
+}
+
+.exercise-card {
+  color: white;
+}
+
+.glass-card h2,
+.exercise-card h5 {
+  color: #4cc9f0;
+  margin-bottom: 20px;
+}
+
+.glass-card p,
+#info p {
+  color: #e2e8f0;
+  line-height: 1.8;
+}
+
+#info p {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.glass-card:hover,
+.topic-card:hover,
+.exercise-card:hover {
+  transform: translateY(-5px) !important;
+  background: rgba(15, 23, 42, 0.8) !important;
 }
 
 .icon-box {
@@ -167,40 +196,11 @@ body {
   color: white;
   font-weight: bold;
   margin-right: 20px;
-  box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
-  transition: transform 0.3s ease;
 }
 
 .topic-card span {
   flex: 1;
   font-size: 1.1rem;
-}
-
-.glass-card {
-  margin: 25px auto;
-  max-width: 900px;
-  background: rgba(9, 14, 25, 0.75) !important;
-  border: 1px solid rgba(56, 189, 248, 0.2) !important;
-  backdrop-filter: blur(20px) !important;
-  -webkit-backdrop-filter: blur(20px) !important;
-  padding: 35px;
-  border-radius: 25px !important;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4) !important;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
-}
-
-.glass-card h2 {
-  color: #4cc9f0;
-  margin-bottom: 20px;
-  text-shadow: 0 0 15px rgba(76, 201, 240, 0.2);
-}
-
-.glass-card p {
-  color: #e2e8f0;
-  line-height: 1.8;
 }
 
 .glass-card .form-control {
@@ -214,31 +214,33 @@ body {
   background: rgba(15, 23, 42, 0.8) !important;
   border-color: #4cc9f0 !important;
   color: #fff !important;
-  box-shadow: 0 0 10px rgba(76, 201, 240, 0.3) !important;
+  outline: none;
 }
 
-.exercise-card {
-  background: rgba(20, 35, 70, 0.8);
-  border: 1px solid rgba(56, 189, 248, 0.15);
-  color: white;
-  border-radius: 20px;
+.img-container {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.exercise-card h5 {
-  color: #4cc9f0;
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.glass-card:hover,
-.topic-card:hover,
-.exercise-card:hover {
-  transform: translateY(-5px) scale(1.01) !important;
-  border-color: #4cc9f0 !important;
-  box-shadow: 0 15px 35px rgba(76, 201, 240, 0.3) !important;
-  background: rgba(15, 23, 42, 0.75) !important;
-}
-
-.topic-card:hover .icon-box {
-  transform: scale(1.1) rotate(3deg);
+footer {
+  border-radius: 15px;
+  margin-top: 60px;
+  padding: 25px;
+  background: rgba(8, 18, 40, 0.9);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: #cbd5e1;
 }
 
 .text-truncate {
@@ -251,47 +253,6 @@ body {
   font-size: 2.5rem;
 }
 
-@keyframes pulsoNeon {
-  0% {
-    text-shadow:
-      0 0 15px rgba(56, 189, 248, 0.3),
-      0 0 30px rgba(56, 189, 248, 0.1);
-  }
-  100% {
-    text-shadow:
-      0 0 25px rgba(56, 189, 248, 0.8),
-      0 0 50px rgba(76, 201, 240, 0.5);
-  }
-}
-
-#info p {
-  color: #e2e8f0;
-  font-size: 1.1rem;
-  margin-bottom: 10px;
-}
-
-footer {
-  border-radius: 15px;
-  margin-top: 60px;
-  padding: 25px;
-  background: rgba(8, 18, 40, 0.9);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  color: #cbd5e1;
-}
-
-/* scroll esto esta muy bueno lo dejo comentado para cobiar esto despues */
-::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-track {
-  background: #0f172a;
-}
-::-webkit-scrollbar-thumb {
-  background: #38bdf8;
-  border-radius: 20px;
-}
-
-/* diseño responsivo, guardarlo en otro css para porterior uso de mi web */
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 2.3rem;
@@ -312,6 +273,7 @@ footer {
     margin-right: 0;
   }
 }
+
 @media (max-width: 576px) {
   .hero {
     padding-top: 140px;
@@ -322,27 +284,4 @@ footer {
   .hero p {
     font-size: 1rem;
   }
-}
-
-
-.img-container {
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  border-radius: 12px;
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.img-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.glass-card:hover .img-container img {
-  transform: scale(1.05);
 }
