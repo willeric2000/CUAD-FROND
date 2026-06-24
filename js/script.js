@@ -93,7 +93,7 @@ function startTimer() {
 
 function renderQuestion() {
   if (!questionEl && !optionsEl) return;
-  
+
   clearInterval(timer);
   timeLeft = GAME_TIME;
   updateBar();
@@ -143,14 +143,6 @@ function nextQuestion() {
       <h2>🎉 Fin del juego</h2>
       <h3>${score} / ${QUESTIONS.length}</h3>
       <button class="btn btn-success mt-3" onclick="location.reload()">Reiniciar</button>`;
-  }
-}
-
-function playSound(id) {
-  const audio = document.getElementById(id);
-  if (audio) {
-    audio.currentTime = 0;
-    audio.play().catch(() => {});
   }
 }
 
